@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 
 function App() {
   const [pdfFile, setPdfFile] = useState(null);
@@ -9,19 +10,27 @@ function App() {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: "40px auto", fontFamily: "sans-serif" }}>
+    <div className="app-container">
       <h2>AI Productivity Tool</h2>
-      <label>
+      <div className="upload-section">
         <b>Upload PDF:</b>
+        <button
+          type="button"
+          className="upload-btn"
+          onClick={() => document.getElementById('pdf-upload').click()}
+        >
+          Choose File
+        </button>
         <input
+          id="pdf-upload"
           type="file"
           accept="application/pdf"
           onChange={handleFileChange}
-          style={{ display: "block", marginTop: 8 }}
+          style={{ display: "none" }}
         />
-      </label>
+      </div>
       {pdfFile && (
-        <div style={{ marginTop: 10 }}>
+        <div className="selected-file">
           <b>Selected file:</b> {pdfFile.name}
         </div>
       )}

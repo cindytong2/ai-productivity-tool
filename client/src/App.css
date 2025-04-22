@@ -1,0 +1,92 @@
+/* Apple-like minimalist UI for App.js */
+body {
+  background: #f8f8f9;
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.app-container {
+  background: #fff;
+  max-width: 420px;
+  margin: 60px auto 0 auto;
+  padding: 32px 28px 28px 28px;
+  border-radius: 22px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.08), 0 1.5px 6px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 22px;
+  color: #222;
+  letter-spacing: -0.5px;
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+.upload-section b {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.upload-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 13px;
+  padding: 13px 28px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  outline: none;
+  letter-spacing: -0.2px;
+  display: block;
+}
+
+.upload-btn:hover, .upload-btn:focus {
+  background: #222;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+
+input[type="file"] {
+  margin-top: 10px;
+  padding: 10px 0;
+  border: none;
+  background: none;
+  font-size: 1rem;
+}
+
+.selected-file {
+  margin-top: 18px;
+  padding: 16px 14px;
+  background: #f3f4f6;
+  border-radius: 14px;
+  color: #333;
+  font-size: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+@media (max-width: 500px) {
+  .app-container {
+    padding: 18px 8px;
+    max-width: 98vw;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+}
