@@ -30,9 +30,18 @@ function App() {
         />
       </div>
       {pdfFile && (
-        <div className="selected-file">
-          <b>Selected file:</b> {pdfFile.name}
-        </div>
+        <>
+          <div className="selected-file">
+            <b>Selected file:</b> {pdfFile.name}
+          </div>
+          <button
+            className="process-btn"
+            style={{ marginTop: 18 }}
+            onClick={() => alert('PDF would be processed!')}
+          >
+            Process PDF
+          </button>
+        </>
       )}
     </div>
   );

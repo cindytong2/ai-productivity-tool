@@ -40,7 +40,7 @@ h2 {
   color: #444;
 }
 
-.upload-btn {
+.upload-btn, .process-btn {
   background: #111;
   color: #fff;
   border: none;
@@ -57,9 +57,16 @@ h2 {
   display: block;
 }
 
-.upload-btn:hover, .upload-btn:focus {
+.upload-btn:hover, .upload-btn:focus,
+.process-btn:hover, .process-btn:focus {
   background: #222;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.process-btn {
+  width: 100%;
+  margin-top: 18px;
+  margin-bottom: 0;
 }
 
 
