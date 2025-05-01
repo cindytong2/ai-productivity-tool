@@ -58,7 +58,6 @@ async def summarize_pdf(request: Request):
 
 @app.post("/generate-ideas")
 def generate_ideas(req: TopicRequest):
-    # Placeholder for OpenAI integration
     return {"ideas": [f"Idea for: {req.topic}"]}
 
 @app.get("/")

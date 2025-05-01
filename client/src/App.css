@@ -1,99 +1,168 @@
-/* Apple-like minimalist UI for App.js */
 body {
-  background: #f8f8f9;
-  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(135deg, #f6f8fc 0%, #f1f4f9 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "San Francisco", "Helvetica Neue", Arial, sans-serif;
   margin: 0;
+  min-height: 100vh;
+  color: #1a1a1a;
 }
 
 .app-container {
-  background: #fff;
-  max-width: 420px;
-  margin: 60px auto 0 auto;
-  padding: 32px 28px 28px 28px;
-  border-radius: 22px;
-  box-shadow: 0 6px 32px rgba(0,0,0,0.08), 0 1.5px 6px rgba(0,0,0,0.04);
+  background: rgba(255, 255, 255, 0.95);
+  max-width: 680px;
+  margin: 80px auto;
+  padding: 48px;
+  border-radius: 24px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 24px 48px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.03);
 }
 
 h2 {
-  font-weight: 600;
-  font-size: 2rem;
-  margin-bottom: 22px;
-  color: #222;
-  letter-spacing: -0.5px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 32px;
+  color: #111;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .upload-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 32px;
   width: 100%;
+  padding: 32px;
+  background: #f8fafc;
+  border-radius: 20px;
+  border: 2px dashed #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.upload-section:hover {
+  border-color: #94a3b8;
+  background: #f1f5f9;
 }
 
 .upload-section b {
-  margin-bottom: 12px;
-  font-size: 1.1rem;
-  color: #444;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  color: #334155;
+  font-weight: 600;
 }
 
 .upload-btn, .process-btn {
-  background: #111;
+  background: linear-gradient(135deg, #000 0%, #333 100%);
   color: #fff;
   border: none;
-  border-radius: 13px;
-  padding: 13px 28px;
-  font-size: 1.08rem;
-  font-weight: 500;
-  margin-top: 10px;
+  border-radius: 16px;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 16px;
   cursor: pointer;
-  transition: background 0.18s, box-shadow 0.18s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   outline: none;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.01em;
   display: block;
 }
 
 .upload-btn:hover, .upload-btn:focus,
 .process-btn:hover, .process-btn:focus {
-  background: #222;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #111 0%, #444 100%);
 }
 
 .process-btn {
   width: 100%;
-  margin-top: 18px;
+  margin-top: 24px;
   margin-bottom: 0;
 }
 
-
-input[type="file"] {
-  margin-top: 10px;
-  padding: 10px 0;
-  border: none;
-  background: none;
-  font-size: 1rem;
+.process-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .selected-file {
-  margin-top: 18px;
-  padding: 16px 14px;
-  background: #f3f4f6;
-  border-radius: 14px;
-  color: #333;
-  font-size: 1rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  margin-top: 24px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 16px;
+  color: #334155;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e2e8f0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-@media (max-width: 500px) {
+.error-message {
+  margin-top: 24px;
+  background: #fee2e2;
+  padding: 20px;
+  border-radius: 16px;
+  color: #991b1b;
+  font-size: 1rem;
+  border: 1px solid #fecaca;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.summary-container {
+  margin-top: 32px;
+  background: #f8fafc;
+  padding: 24px;
+  border-radius: 16px;
+  color: #334155;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.summary-container b {
+  display: block;
+  margin-bottom: 12px;
+  color: #1e293b;
+  font-size: 1.1rem;
+}
+
+.summary-container div {
+  line-height: 1.6;
+  color: #475569;
+}
+
+@media (max-width: 768px) {
   .app-container {
-    padding: 18px 8px;
-    max-width: 98vw;
+    margin: 40px 20px;
+    padding: 32px 24px;
   }
+  
   h2 {
-    font-size: 1.3rem;
+    font-size: 2rem;
+  }
+  
+  .upload-section {
+    padding: 24px 16px;
   }
 }

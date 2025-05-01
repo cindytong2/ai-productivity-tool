@@ -9,7 +9,6 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     setPdfFile(file);
@@ -82,7 +81,7 @@ function App() {
     <div className="app-container">
       <h2>AI Productivity Tool</h2>
       <div className="upload-section">
-        <b>Upload PDF:</b>
+        <b>Upload your PDF document</b>
         <button
           type="button"
           className="upload-btn"
@@ -98,6 +97,7 @@ function App() {
           style={{ display: "none" }}
         />
       </div>
+      
       {pdfFile && (
         <>
           <div className="selected-file">
@@ -105,28 +105,28 @@ function App() {
           </div>
           <button
             className="process-btn"
-            style={{ marginTop: 18 }}
             onClick={handleProcessPdf}
             disabled={loading}
           >
-            {loading ? "Processing..." : "Process PDF"}
+            {loading ? "Processing..." : "Generate Summary"}
           </button>
         </>
       )}
-    {error && (
-      <div style={{ marginTop: 24, background: '#ffeaea', padding: 16, borderRadius: 10, color: '#a00' }}>
-        <b>Error:</b> {error}
-      </div>
-    )}
-    {summary && (
-      <div style={{ marginTop: 24, background: '#f9f9f9', padding: 16, borderRadius: 10, color: '#222' }}>
-        <b>AI Summary:</b>
-        <div>{summary}</div>
-      </div>
-    )}
-  </div>
+
+      {error && (
+        <div className="error-message">
+          <b>Error:</b> {error}
+        </div>
+      )}
+
+      {summary && (
+        <div className="summary-container">
+          <b>AI Summary</b>
+          <div>{summary}</div>
+        </div>
+      )}
+    </div>
   );
 }
-
 
 export default App;
