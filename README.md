@@ -17,9 +17,9 @@
    pip install -r requirements.txt
    ```
 3. **Set environment variables:**
-   - Create a `.env` file in the `backend` directory with your OpenAI API key:
+   - Create a `.env` file in the `backend` directory with your HuggingFace API Token:
      ```env
-     OPENAI_API_KEY=your_openai_api_key_here
+     HUGGINGFACE_API_TOKEN=your_huggingface_api_token_here
      ```
 4. **Run the FastAPI server:**
    ```bash
